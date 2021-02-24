@@ -1,0 +1,35 @@
+﻿@model IEnumerable<lab5.Models.Books>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>View</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Book Title</th>
+            <th>Author Firstname</th>
+            <th>Author's Middlename</th>
+            <th>Author's Lastname</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Title</td>
+                <td>@item.FirstName</td>
+                <td>@item.MiddleName</td>
+                <td>@item.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
